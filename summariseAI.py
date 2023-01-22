@@ -9,7 +9,15 @@ openai.api_key = st.secrets ["pass"]
 st.header("Report summarizer app OpenAI + Streamlit")
 
 article_text = st.text_area ("Enter the observation list to be summarized")
+output_size = st.radio(label = "What kind of output do you want?", 
+                    options= ["To-The-Point", "Concise", "Detailed"])
 
+if output_size == "To-The-Point":
+    out_token = 50
+elif output_size == "Concise":
+    out_token = 128
+else:
+    out_token = 516
 
 if len(article_text) > 100:
         temp = st.slider("temperature", 0.0,1.0,0.5)
@@ -19,7 +27,7 @@ if len(article_text) > 100:
                 engine = "text-davinci-003",
                 prompt = "Please summarize this article to generate background" + article_text,
                 max_tokens = 516,
-                temperature = temp,
+                temperature = 0.5,
             )
      
      #Print the summary
