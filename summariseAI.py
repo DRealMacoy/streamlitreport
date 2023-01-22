@@ -27,7 +27,7 @@ if len(article_text) > 100:
         res = response["choices"] [0] ["text"]
         st.info(res)
 
-        #st.download_button("Download Result", res)
+      #st.download_button("Download Result", res)
 
 else:
    st.warning("The paragraph is not long enough")
