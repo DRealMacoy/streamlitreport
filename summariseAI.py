@@ -1,11 +1,10 @@
 # import libraries
 
-import os
 import openai
 import streamlit as st 
 
 # set the GPT3 - api key
-openai.api_key = st.secrets ["pass"]
+openai.api_key = st.secrets ['pass']
 
 st.header("Report summarizer app OpenAI + Streamlit")
 
