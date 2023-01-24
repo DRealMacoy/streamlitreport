@@ -1,10 +1,10 @@
 # import libraries
 
-import openai
+import openai       
 import streamlit as st 
 
 # set the GPT3 - api key
-openai.api_key = st.secrets ['pass']
+openai.api_key = st.secrets ["pass"]
 
 st.header("Report summarizer app OpenAI + Streamlit")
 
@@ -27,8 +27,7 @@ if len(article_text) > 100:
                 engine = "text-davinci-003",
                 prompt = "Please summarize this article to generate background" + article_text,
                 max_tokens = out_token,
-                temperature = 0.5,
-            )
+                temperature = 0.5)
      
      #Print the summary
 
